@@ -36,6 +36,7 @@ class Library
         member.list_members
 
       when 3
+        member.borrow_book
 
       when 4
 
