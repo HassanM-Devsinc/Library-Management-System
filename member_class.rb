@@ -1,7 +1,9 @@
 require_relative ('file_handling_module')
+require_relative ('search_book_module')
 
 class Member
   include FileHandling
+  include SearchBook
 
   def list_members
     puts "\n\t\tOur Members:\n"
@@ -47,29 +49,6 @@ class Member
     end
   end
 
-  def check_book_exists
-    book_info = nil
-
-    loop do
-      print "\n\t\tPlease enter book or author name: "    # Since member exists, now asking for book or author name.
-      input_book_or_author_name = gets.chomp
-      
-      read_file($books_file) do |book_name, author_name|
-        if input_book_or_author_name == book_name || input_book_or_author_name == author_name.chomp   # comparing if the book or author name exists with our data or not.
-          book_exist = true
-          book_info = { book: book_name, author: author_name}
-          break
-        end
-      end
-
-      if book_info
-        return book_info
-      else
-        puts "\n\t\tInvalid Book OR Author name!"
-      end
-    end
-  end
-
   def book_already_borrowed?(book_name, author_name)
     if File.exists?($borrowed_book_details_file)
       read_file($borrowed_book_details_file) do |member_id, member_name, book_namee, author_namee|
@@ -83,6 +62,10 @@ class Member
 
   def save_borrowed_book_and_member_data(member_id, member_name, book_name, author_name)
     borrowed_details = "#{member_id.chomp} - #{member_name.chomp} - #{book_name.chomp} - #{author_name.chomp}"
-    create_file($borrowed_book_details_file, $append_mode, borrowed_details)
+    if create_file?($borrowed_book_details_file, $append_mode, borrowed_details)
+      puts "\n\t\tBorrowed book data saved successfully."
+    else
+      puts "\n\t\tError. Please try again!"
+    end
   end
 end
