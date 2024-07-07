@@ -41,6 +41,7 @@ class Library
       when 4
 
       when 5
+        book.book_search
 
       when 0
         puts "\n\t\tThanks for visiting."
