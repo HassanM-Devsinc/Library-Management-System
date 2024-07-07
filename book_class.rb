@@ -1,9 +1,9 @@
 require_relative ('file_handling_module')
-require_relative ('search_book_module')
+require_relative ('search_book_member_module')
 
 class Book
   include FileHandling
-  include SearchBook
+  include SearchBookOrMember
 
   def list_books
     puts "\n\t\tOur Books:\n"
@@ -13,7 +13,7 @@ class Book
   end
 
   def book_search
-    book_info = check_book_exists
+    book_info = check_book_or_member_exists($books_file)
     puts "\n\t\tBook: #{book_info[:book]}, Author: #{book_info[:author]}"
   end
 end
