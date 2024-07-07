@@ -5,7 +5,7 @@ module FileHandling
         yield data.split(' - ')
       end
     rescue Errno::ENOENT
-      puts "\n\t\tFile not found. Please try again!"
+      
     rescue
       puts "\n\t\tError. Please try again!"
     end
@@ -27,7 +27,7 @@ module FileHandling
     begin
       File.delete(file_name)
     rescue Errno::ENOENT
-      puts "\n\t\tFile not found. Please try again!"
+
     rescue
       puts "\n\t\tError. Please try again!"
     end
@@ -37,7 +37,7 @@ module FileHandling
     begin
       File.rename(old_file_name, new_file_name)
     rescue Errno::ENOENT
-      puts "\n\t\tFile not found. Please try again!"
+      
     rescue
       puts "\n\t\tError. Please try again!"
     end

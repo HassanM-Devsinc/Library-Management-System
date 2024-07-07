@@ -13,7 +13,7 @@ class Library
     puts "\t\tPress 3 to borrow a book"
     puts "\t\tPress 4 to return a book"
     puts "\t\tPress 5 to search a book"
-    puts "\t\tPress 0 to exit"
+    puts "\t\tPress 6 to exit"
     puts "\t\t*****************************"
     print "\n\t\tPlease enter your choice: "
     choice = gets.chomp.to_i
@@ -39,12 +39,12 @@ class Library
         member.borrow_book
 
       when 4
-        # member.return_book
+        member.return_book
 
       when 5
         book.book_search
 
-      when 0
+      when 6
         puts "\n\t\tThanks for visiting."
         break
 

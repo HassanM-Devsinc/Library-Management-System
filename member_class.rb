@@ -46,7 +46,8 @@ class Member
     end
   end
 
-  # def return_book
-  #   book_member_info = check_book_or_member_exists($borrowed_book_details_file)
-  # end
+  def return_book
+    return_message = check_book_or_member_exists($borrowed_book_details_file)
+    puts "\n\t\t#{return_message}"
+  end
 end
