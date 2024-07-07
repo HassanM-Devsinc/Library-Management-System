@@ -34,7 +34,7 @@ module SearchBookOrMember
       end
 
       if file == "borrowed_book_details.txt"
-        if !read_borrowed_book_details_file?(file, input_book_or_author_name, input_member_id)
+        if !check_record_in_borrowed_book_details_file?(file, input_book_or_author_name, input_member_id)
           return "No record exists"
         else
           return "Book returned successfully."
@@ -49,7 +49,7 @@ module SearchBookOrMember
     end
   end
 
-  def read_borrowed_book_details_file?(file, book_data, member_data)
+  def check_record_in_borrowed_book_details_file?(file, book_data, member_data)
     new_file_name = "temp.txt"
     record_exists = false
 

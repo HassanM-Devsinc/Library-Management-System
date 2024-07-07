@@ -23,7 +23,7 @@ class Library
 
   def manage_menu
     book = Book.new
-    member = Member.new
+    member = Member.new("members_data.txt", "borrowed_book_details.txt")
 
     loop do
       choice = display_menu_and_get_choice
