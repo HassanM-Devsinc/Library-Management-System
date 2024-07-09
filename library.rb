@@ -31,23 +31,17 @@ class Library
       case choice
       when 1
         book.list_books
-
       when 2
         member.list_members
-
       when 3
         member.borrow_book
-
       when 4
         member.return_book
-
       when 5
         book.book_search
-
       when 6
         puts "\n\t\tThanks for visiting."
         break
-
       else
         puts "\n\t\tInvalid Choice!"
       end
