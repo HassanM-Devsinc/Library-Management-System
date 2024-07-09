@@ -1,4 +1,4 @@
-require_relative ('file_handling_module')
+require_relative ('file_handling')
 
 module SearchBookOrMember
   def check_book_or_member_exists(file)

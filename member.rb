@@ -1,5 +1,5 @@
-require_relative ('file_handling_module')
-require_relative ('search_book_member_module')
+require_relative ('file_handling')
+require_relative ('search_book_member')
 
 class Member
   include FileHandling

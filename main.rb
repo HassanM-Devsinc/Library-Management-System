@@ -1,4 +1,4 @@
-require_relative ('library_class')
+require_relative ('library')
 
 # global variables
 $books_file = "books_data.txt"

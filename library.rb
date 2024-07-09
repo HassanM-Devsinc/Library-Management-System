@@ -1,5 +1,5 @@
-require_relative ('book_class')   
-require_relative ('member_class')
+require_relative ('book')   
+require_relative ('member')
 
 class Library
   def welcome_message
